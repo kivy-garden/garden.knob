@@ -3,12 +3,13 @@
     ====
 
     The :class:`Knob` widget creates a component that looks like a
-    control Knob or Dial (from Wikipedia: "A control knob is a rotary
+    control Knob or Dial (from Wikipedia : "A control knob is a rotary
     control used to provide input to a device when grasped by an
     operator and turned, so that the degree of rotation corresponds to
-    the desired input."). To configure a knob a max/min and step values
-    should be provided (like in Slider). Additionally, knobimg_source
-    could be set to load a texture that visually represents the knob.
+    the desired input." http://en.wikipedia.org/wiki/Control_knob).
+    To configure a knob a max/min and step values should be provided
+    (like in Slider). Additionally, knobimg_source could be set to load
+    a texture that visually represents the knob.
 
     To create a basic knob (in a kv file):
 
