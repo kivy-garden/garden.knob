@@ -57,7 +57,6 @@ Builder.load_string('''
 #       markeroff_color:    0, 0, 0, 0
 
 <Knob>
-    label: _label
     size_hint: None, None
 
     canvas.before:
@@ -98,13 +97,6 @@ Builder.load_string('''
 
     canvas:
         PopMatrix
-
-    Label:
-        id: _label
-        text: "%.2f"%(root.value)
-        center: root.center
-        font_size: root.font_size
-        color: root.font_color
 
 ''')
 
@@ -250,25 +242,16 @@ class Knob(Widget):
 
     def __init__(self, *args, **kwargs):
         super(Knob, self).__init__(*args, **kwargs)
-        self.bind(show_label    =   self._show_label)
         self.bind(show_marker   =   self._show_marker)
         self.bind(value         =   self._value)
 
-
-    def _show_label(self, o, flag):
-        if flag and (self._label not in self.children):
-            self.add_widget(self._label)
-        elif not flag and (self._label in self.children):
-            self.remove_widget(self._label)
-
-
-    def _value(self, o, value):
+    def _value(self, instance, value):
         self._angle     =   pow( (value - self.min)/(self.max - self.min), 1./self.curve) * 360.
         self.on_knob(value)
 
-    def _show_marker(self, o, value):
+    def _show_marker(self, instance, flag):
         # "show/hide" marker.
-        if value:
+        if flag:
             self.knobimg_bgcolor[3] = 1
             self.marker_color[3] = 1
             self.markeroff_color[3] = 1
