@@ -37,7 +37,6 @@ Builder.load_string('''
 #       slope:              1
 #       value:              0                       # Default position of knob.
 #       knobimg_source:     "img/knob_metal.png"    # Knob texture
-#       show_label:         True                    # Show central label
 #       show_marker:        False                   # Do not show surrounding marker
 #
 #     To create a knob with a surrounding marker:
@@ -50,7 +49,6 @@ Builder.load_string('''
 #       slope:              1
 #       value:              0                       # Default position of knob.
 #       knobimg_source:     "img/knob_metal.png"    # Knob texture
-#       show_label:         True                    # Show central label
 #       show_marker:        True                    # Show surrounding marker
 #       marker_img:         "img/bline.png"         # Marker texture image
 #       knob_size:          0.9                     # Scales knob size to leave space for marker
@@ -156,24 +154,6 @@ class Knob(Widget):
     and defaults to [1,1,1,1].
     '''
 
-    show_label = BooleanProperty(True)
-    ''' Shows/hides center label that show current value of knob.
-    :attr:`show_label` is a :class:`~kivy.properties.BooleanProperty`
-    and defaults to True.
-    '''
-
-    font_size = StringProperty('10sp')
-    ''' Font size of label.
-    :attr:`font_size` is a :class:`~kivy.properties.StringProperty`
-    and defaults to "10sp".
-    '''
-
-    font_color = ListProperty([1, 1, 1, 1])
-    ''' Font color of label.
-    :attr:`font_color` is a :class:`~kivy.properties.ListProperty`
-    and defaults to [1,1,1,1].
-    '''
-
     knobimg_size = BoundedNumericProperty(0.9, max=1.0, min=0.1)
     ''' Internal proportional size of rectangle that holds
     :attr:`knobimg_source` texture.
@@ -237,8 +217,6 @@ class Knob(Widget):
 
     _angle          = NumericProperty(0)            # Internal angle calculated from value.
     _angle_step     = NumericProperty(0)            # Internal angle_step calculated from step.
-    _label          = ObjectProperty(None)          # Internal label that show value.
-
 
     def __init__(self, *args, **kwargs):
         super(Knob, self).__init__(*args, **kwargs)
