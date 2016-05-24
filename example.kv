@@ -1,0 +1,64 @@
+<Main>
+GridLayout:
+    pos: root.pos
+    size: root.size
+    cols: 3
+    spacing: 100
+    padding: 50
+
+    Knob:
+        min:4
+        max:5
+        size: 200, 200
+        value: 0
+        show_marker: True
+        knobimg_source: "img/knob_metal.png"
+        show_marker: False
+
+    Knob:
+        size: 200, 200
+        value: 0
+        show_marker: True
+        knobimg_source: "img/knob_metal.png"
+        marker_img: "img/bline.png"
+        markeroff_color: 0.3, 0.3, .3, 1
+
+    Knob:
+        size: 200, 200
+        value: 0
+        show_marker: True
+        knobimg_source: ""
+        knobimg_color: 0, 0, 0, 0
+        marker_img: "img/bline.png"
+        markeroff_color: 0, 0, 0, 0
+        marker_inner_color: 0, 0, 0, 1
+
+    Knob:
+        size: 200, 200
+        value: 0
+        show_marker: True
+        knobimg_source: "img/knob_metal.png"
+        marker_img: "img/bline.png"
+        markeroff_color: 0.0, 0.0, .0, 1
+        knobimg_size: 0.7
+
+    Knob:
+        size: 200, 200
+        step: 25
+        value: 10
+        show_marker: True
+        knobimg_source: "img/knob_metal.png"
+        marker_img: "img/bline2.png"
+        markeroff_img: "img/bline2_off.png"
+        markeroff_color: 0.3, 0.3, .3, 1
+        marker_ahead: 6
+        knobimg_size: 0.8
+        marker_startangle: 6
+
+    Knob:
+        size: 200, 200
+        value: 0
+        knobimg_source: "img/knob_black.png"
+        markeroff_color: 0.0, 0.0, .0, 1
+        knobimg_size: 0.9
+        marker_img: "img/bline3.png"
